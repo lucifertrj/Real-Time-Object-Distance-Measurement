@@ -1,4 +1,7 @@
-# Real-Time Object Detection and Distance Measurement
+<div align="center">
+<h1>Real-Time Object Detection and Distance Measurement</h1>
+<img src="https://i.ytimg.com/vi/ftsUg5VlzIE/maxresdefault.jpg" width=80%>
+</div>
 
 ### AccelATHON 3.0
 Team Name: Cipher
