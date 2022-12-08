@@ -4,7 +4,7 @@ import os
 warnings.filterwarnings("ignore")
 import termcolor
 
-KNOWN_DISTANCE = 46
+KNOWN_DISTANCE = 48
 PERSON_WIDTH = 15
 CUP_WIDTH = 3
 KEYBOARD_WIDTH = 4
@@ -33,10 +33,10 @@ def detect_object(object):
     return data_list
 
 def cal_distance(f,W,w):
-    return (W * f) / w
+    return (w * f) / W 
 
 def cal_focalLength(d, W, w):
-    return (w * d) / W
+    return (W * d) / w*2
 
 class_names = []
 with open("classes.txt", "r") as objects_file:
@@ -57,13 +57,13 @@ scissors_image_path = os.path.join("src","scissors.jpg")
 person_data = detect_object(cv2.imread(person_image_path))
 person_width_in_rf = person_data[0][1]
 
-keyboard_data = detect_object(cv2.imread(kb_image_path))
+"""keyboard_data = detect_object(cv2.imread(kb_image_path))
 #print(keyboard_data)
-keyboard_width_in_rf = keyboard_data[1][1]
+keyboard_width_in_rf = keyboard_data[1][1]"""
 
 mobile_data = detect_object(cv2.imread(moblie_image_path))
 #print(mobile_data)
-mobile_width_in_rf = mobile_data[1][1]
+mobile_width_in_rf = mobile_data[0][1]
 
 scissor_data = detect_object(cv2.imread(scissors_image_path))
 #print(scissor_data)
@@ -81,7 +81,7 @@ focal_mobile = cal_focalLength(KNOWN_DISTANCE, MOBILE_WIDTH, mobile_width_in_rf)
 focal_scissor = cal_focalLength(KNOWN_DISTANCE, SCISSOR_WIDTH, scissor_width_in_rf)
 
 try:
-    capture = cv2.VideoCapture(2)
+    capture = cv2.VideoCapture(0)
     while True:
         _,frame = capture.read()
 
