@@ -6,12 +6,12 @@
 ### AccelATHON 3.0
 Team Name: Cipher
 
-
 ### Problem Statement
 
 Real World Distance measurement by detecting and identifying the Object using WebCam. A prototype that can help blind people navigate smoothly. 
 
-Dataset used: YoloV4:Yolo i.e., You only look once. 
+Algorithm used: YoloV4:Yolo i.e., You only look once.
+Dataset uses: COCO i.e., Common Objects in Context
 
 Future Goal: Implementing the project on Hardware kit, i.e., ESP32 CAM. 
 
